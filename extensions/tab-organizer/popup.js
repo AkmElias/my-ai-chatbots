@@ -54,44 +54,44 @@ function openTab(url) {
     chrome.tabs.create({ url: url });
 }
 
-function addCategory() {
-    const categoryName = document.getElementById('new-category-name').value.trim();
-    const tagsInput = document.getElementById('new-category-tags').value.trim();
-    const tags = tagsInput.split(',').map(tag => tag.trim()).filter(tag => tag); // Split tags and trim whitespace
+// function addCategory() {
+//     const categoryName = document.getElementById('new-category-name').value.trim();
+//     const tagsInput = document.getElementById('new-category-tags').value.trim();
+//     const tags = tagsInput.split(',').map(tag => tag.trim()).filter(tag => tag); // Split tags and trim whitespace
 
-    if (categoryName && tags.length > 0) {
-        // Create a new category div
-        const newCategoryDiv = document.createElement('div');
-        newCategoryDiv.className = 'category';
+//     if (categoryName && tags.length > 0) {
+//         // Create a new category div
+//         const newCategoryDiv = document.createElement('div');
+//         newCategoryDiv.className = 'category';
 
-        // Create a new heading for the category
-        const newCategoryHeading = document.createElement('h2');
-        newCategoryHeading.textContent = categoryName;
+//         // Create a new heading for the category
+//         const newCategoryHeading = document.createElement('h2');
+//         newCategoryHeading.textContent = categoryName;
 
-        // Create a new unordered list for the category
-        const newCategoryList = document.createElement('ul');
-        newCategoryList.id = `${categoryName.toLowerCase().replace(/\s+/g, '-')}-tabs`; // Generate a unique ID
+//         // Create a new unordered list for the category
+//         const newCategoryList = document.createElement('ul');
+//         newCategoryList.id = `${categoryName.toLowerCase().replace(/\s+/g, '-')}-tabs`; // Generate a unique ID
 
-        // Append heading and list to the new category div
-        newCategoryDiv.appendChild(newCategoryHeading);
-        newCategoryDiv.appendChild(newCategoryList);
+//         // Append heading and list to the new category div
+//         newCategoryDiv.appendChild(newCategoryHeading);
+//         newCategoryDiv.appendChild(newCategoryList);
 
-        // Store tags for later use (you can adjust how you want to store these)
-        newCategoryDiv.dataset.tags = JSON.stringify(tags);
+//         // Store tags for later use (you can adjust how you want to store these)
+//         newCategoryDiv.dataset.tags = JSON.stringify(tags);
 
-        // Append the new category to the categories container
-        const categoriesContainer = document.getElementById('categories');
-        const otherCategory = document.getElementById('other-tabs');
-        if (otherCategory) {
-            categoriesContainer.insertBefore(newCategoryDiv, otherCategory.parentElement); // Insert before "Other"
-        } else {
-            categoriesContainer.appendChild(newCategoryDiv); // Append if "Other" doesn't exist
-        }
+//         // Append the new category to the categories container
+//         const categoriesContainer = document.getElementById('categories');
+//         const otherCategory = document.getElementById('other-tabs');
+//         if (otherCategory) {
+//             categoriesContainer.insertBefore(newCategoryDiv, otherCategory.parentElement); // Insert before "Other"
+//         } else {
+//             categoriesContainer.appendChild(newCategoryDiv); // Append if "Other" doesn't exist
+//         }
 
-        // Clear the input fields
-        document.getElementById('new-category-name').value = '';
-        document.getElementById('new-category-tags').value = '';
-    } else {
-        alert('Please enter a category name and at least one tag.');
-    }
-}
+//         // Clear the input fields
+//         document.getElementById('new-category-name').value = '';
+//         document.getElementById('new-category-tags').value = '';
+//     } else {
+//         alert('Please enter a category name and at least one tag.');
+//     }
+// }
