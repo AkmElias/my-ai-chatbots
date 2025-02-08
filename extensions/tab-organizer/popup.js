@@ -19,7 +19,6 @@ function organizeTabs() {
         otherTabs.innerHTML = '';
 
         tabs.forEach(tab => {
-            console.log(`Tab URL: ${tab.url}`); // Log the URL of each tab for debugging
             const listItem = document.createElement('li');
             listItem.textContent = tab.title;
             listItem.onclick = function() {
@@ -27,7 +26,7 @@ function organizeTabs() {
             };
 
             // Categorization logic
-            if (/work|upwork|linkedin/i.test(tab.url)) {
+            if (/work|upwork|linkedin|\.test|\.dev|\.site/i.test(tab.url)) {
                 workTabs.appendChild(listItem);
             } else if (/youtube|music|netflix|hulu/i.test(tab.url)) {
                 entertainmentTabs.appendChild(listItem);
