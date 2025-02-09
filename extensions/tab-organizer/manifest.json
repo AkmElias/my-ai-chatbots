@@ -3,7 +3,7 @@
   "name": "Tab Organizer",
   "version": "1.0",
   "description": "Automatically groups and organizes open tabs by category.",
-  "permissions": ["tabs"],
+  "permissions": ["tabs", "tabGroups"],
   "background": {
     "service_worker": "background.js"
   },
