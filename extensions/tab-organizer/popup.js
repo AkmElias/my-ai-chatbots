@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const title = tab.title.toLowerCase();
     
     // Work category
-    if (/github|gitlab|jira|confluence|slack|teams|linkedin|docs|trello|asana/i.test(url)) {
+    if (/github|gitlab|jira|confluence|slack|teams|linkedin|docs|trello|asana|\.test|\.site/i.test(url)) {
       return 'work';
     }
     
